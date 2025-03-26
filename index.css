@@ -1,37 +1,459 @@
-body {
-    border: 8px solid orange;
-    padding: 30px;
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Chicago, 'DungGeunMo';
+    font-size: 8px;
+    width: 100%;
+    background: #f9efe4;
+    height: 100vh;
+
+    
 }
 
-a {
-    color: orange;
+#app {
+    display: flex;
+    flex-direction: row; /* 수평으로 정렬 */
+    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    gap: 20px;
+    
 }
+
+.bigBox2 {
+    top: -40px;
+}
+
+@font-face {
+    font-family: Chicago;
+    src: url(/fonts/chikarego2-webfont.4bddfe2b.woff2) format("woff2"),url(/fonts/chikarego2-webfont.6df24b2b.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: Arial;
+    src: url(/fonts/PixelArial11.f2feb7e4.woff2) format("woff2"),url(/fonts/PixelArial11.9aa373a1.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+        font-family: 'DungGeunMo';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+   }
 
 img {
-    width: 200px;
+    width: 60px;
+    height: auto; /* 비율 유지 */
+    
+}
+
+.home {
+    font-size: 25px;
+    padding-left: 60px;
+    padding-top: 20px;
+    text-decoration: none;
+}
+.image-container  {
+   /* display: block; /* 블록 요소로 변경하여 아래에 텍스트 배치 */
+    margin: 50px;
+    bottom: 20px;
+    transform: translateX(-50%, 0);
+    display: flex;
+    gap: 20px;
+    display: flex;
+    flex-direction: column; /* 요소를 수직 정렬 */
+    align-items:self-start;
+
+}
+.custom-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+.custom-link:hover {
+    color: #ff3399;
+}
+
+.textbox1 {
+    display: flex; /* 내부 요소를 가로로 배치 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 필요하면 정렬 조정 */
+    padding: 5px 10px;
+    border: 2px solid #000;
+    width: 250px; /* 너비 조정 */
+    font-size: 12px;
+    border-radius: 30px;
+    background-color: #fff;
+    margin-left: 400px;
+    white-space: nowrap;
+    margin-top: -200px; 
+}
+.textbox1 img {
+    width: 20px; /* 이미지 크기 조정 */
+    height: auto;
+    margin-left: 10px; /* 텍스트와 간격 추가 */
+}
+
+
+/*1번째 상자*/
+.bigBox1 {
+    border: 2px solid #000;
+    box-shadow: inset -1px -1px 0 0 #c2b9b1, 5px 5px 0 #0003;
+    background: #f9efe4;
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    height: 300px;
+    margin: 50px;
+    cursor: pointer;
+    
+
+}
+
+.headerBox1 {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    height: 21px; /*박스 상단 흰색*/
+    background: #fff;
+    border-bottom: 2px solid #000;
+    
+    
+}
+
+.headerBox1 .icon {
+    width: 11px;
+    height: 11px;
+    border: 2px solid #000;
+    background: #000;
+    margin-right: 5px;
+}
+
+.headerBox1 .spacer {
+    flex: 1;
+    height: 2px;
+    background: #000;
+    border-bottom: 1px solid #fff;
+    margin: 0 5px;
+
+}
+
+.headerBox1 h2 {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+}
+
+.inner-wrapper {
+    padding: 10px;
+    flex: 1;
+}
+
+.inner-content {
+    border: 2px solid #000;
+    padding: 10px;
+    background: #fff;
+    height: 140px;
+
+    display: flex; 
+    align-items: center;
+    gap: 20px;
+}
+
+.inner-text {
+    font-size: 14px; /* 폰트 크기 조정 */
+    text-align: left;
+}
+
+.me {
+    padding: 20px;
+    background-color: #dcd9d7;
+    border: 2px solid #000;
+    height: 80px;
+
+}
+
+.image-boxes {
+    display: flex;
+    align-items: center;
+    height: 75px; 
+    background: #f9efe4;
+    border-top: 2px solid #000;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+
+/* .image-boxes .music {
+    flex: 1;
+    height: 2px;
+    background: #000;
+    border-bottom: 1px solid #fff;
+    margin: 0 5px;
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 5px; 
+} */
+
+.m-title {
+    padding: 20px;
+    cursor: pointer;
+}
+.m-title:hover + .m-text {
+    opacity: 1;
+}
+.m-text {
+    padding: 30px 15px;
+    background-color: #000;
+    border-radius: 5px;
+    font-size: 11px;
+    color: #fff;
+    position: absolute;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.h-title {
+    padding: 20px;
+    cursor: pointer;
+    width: 60px;
+}
+.h-title:hover + .h-text {
+    opacity: 1;
+}
+.h-text {
+    padding: 30px 15px;
+    background-color: #000;
+    border-radius: 5px;
+    font-size: 11px;
+    color: #fff;
+    position: absolute;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.t-title {
+    padding: 20px;
+    cursor: pointer;
+}
+.t-title:hover + .t-text {
+    opacity: 1;
+}
+.t-text {
+    padding: 30px 15px;
+    background-color: #000;
+    border-radius: 5px;
+    font-size: 11px;
+    color: #fff;
+    position: absolute;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+/*2번째 상자*/
+.bigBox2 {
+    border: 2px solid #000;
+    box-shadow: inset -1px -1px 0 0 #c2b9b1, 5px 5px 0 #0003;
+    background: #f9efe4;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 450px;
+    margin: 50px;
+    cursor: pointer;
+    
+}
+
+.headerBox2 {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    height: 21px; /*박스 상단 흰색*/
+    background: #f9efe4;
+    border-bottom: 2px solid #000;
+    
+    
+}
+.headerBox2 .icon {
+    width: 11px;
+    height: 11px;
+    border: 2px solid #000;
+    background: #000;
+    margin-right: 5px;
+}
+
+.headerBox2 .spacer {
+    flex: 1;
+    height: 2px;
+    background: #000;
+    border-bottom: 2px solid #fff;
+    margin: 0 5px;
+}
+
+.headerBox2 h2 {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+}
+
+.inner-wrapper2 {
+    padding: 10px;
+    flex: 1;
+}
+.inner-content2 {
+    border: 2px solid #000;
+    padding: 5px;
+    background: #000;
+    height: 20px;
+    position: relative;
+}
+
+.pu-text, .NY-text, .dac-text {
+    font-size: 13px;
+}
+
+.pu-text:hover {
+    color: #938615;
+}
+.NY-text:hover{
+    color: #951c59;
+}
+.dac-text:hover {
+    color: #951c59;
+}
+
+.black-box {
+    width: 100%; /* 부모 요소와 동일한 너비로 설정 */
+    height: 100%;
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    cursor: pointer;
+}
+.black-box:hover .black-text {
+    opacity: 1; /* hover 시에 글씨가 보이도록 설정 */
+}
+.black-text {
+    padding: 0 15px; /* 패딩을 좀 더 추가하여 글씨가 잘 보이도록 */
+    background-color: #ffffff;
+    font-size: 18px; /* 글씨 크기 조금 키우기 */
+    color: #000000;
+    opacity: 0; /* 기본적으로 숨기기 */
+    transition: opacity 0.5s ease; /* 글씨가 서서히 나타나도록 설정 */
+    text-align: center;
+}
+
+
+.box2-imgs {
+    display: flex;
+    justify-content: center;
+    gap: 9px; /* 이미지 간격 조정 */
+    
+}
+.box2-imgs img {
+    align-items: center;
+    width: 150px;
+    height: auto;
+    border-top: 2px solid #000;
+    border: 2px solid #000;
+
+}    
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e4dace;
+    height: 70px;
+    border-bottom: 2px solid black;
+}
+li {
+    float: left;
+}
+li a {
     display: block;
-    margin: 0 auto;
+    padding: 8px;
 }
 
-h1 {
+
+.wel-wrap {
+    width: 100%;
+    margin: 50px auto;
+    position: fixed;
+    top: 0;
+    right: 0; /* 오른쪽 상단에 배치 */
+    z-index: 1000;
+    
+}
+.wel-img {
+    position: relative; /* 기준점 설정 */
+    display: inline-block;
+}
+.wel-wrap img {
+    width: 300px;
+    vertical-align: middle;
+}
+.wel-text {
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    width:100%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    text-align: right;
+    margin: 50px;
     text-align: center;
-    font-size: 50px;
-}
-h3 {
-    text-align: center;
-    font-size: 30px;
+    color: #000000;
+    
+} 
+
+#date-container {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    align-items: center; /* 수직 정렬 */
+    gap: 10px; /* 두 요소 사이 간격 */
+    padding-right: 100px;
+    padding-top: 15px;
 }
 
-legend {
-    font-weight: bold;
+
+#date-time {
+    font-size: 25px;
+    color: #000;
+    margin: 0;
 }
 
-button {
-    border: 1px solid black;
-    text-decoration: underline;
-    color: white;
+.deco {
+    position: fixed;  /* 또는 absolute */
+    bottom: 20px; /* 하단 여백 */
+    left: 20px; /* 왼쪽 여백 */
+    display: flex; /* 이미지와 텍스트를 나란히 정렬 */
+    align-items: center;
+    gap: 10px;
+    
+    
 }
 
-.button1 {
-    background-color: orange;
+.stone-img {
+    width: 70px; /* 이미지 크기 조정 */
+    height: auto;
+}
+.stone-img:hover + .stone-text {
+    opacity: 1;
+}
+.stone-text {
+    font-size: 12px;
+    color: #000;
+    background: rgba(255, 255, 255, 0.8); /* 가독성을 위한 배경 */
+    padding: 5px;
+    border-radius: 5px;
 }
