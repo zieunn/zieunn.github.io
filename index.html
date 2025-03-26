@@ -1,72 +1,207 @@
 <!DOCTYPE html>
-<html lang = "ko">
-    <head>
-        <meta charset = "UTF-8" />
-        <link rel="stylesheet" href="index.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <a href="https://kmu-likelion13.site/">멋쟁이사자처럼 바로가기</a>
-        <br>
-        <img src="Lion.png" alt="이미지 없음">
-        <h1>LIKE LION UNIV.</h1>
-        <h3>회원가입</h3>
-        <form action="">
-            <fieldset>
-                <legend>기본정보</legend>
-                <label for="userid">아이디
-                    <input type="text" id = "userid" placeholder="아이디는 8자 이상입니다"> 
-                    
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개페이지</title>
+    <link rel="stylesheet" href="index.css">
 
-                </label>
-                <br>
-                <label for="userid">비밀번호
-                    <input type="text" id = "password" placeholder="비밀번호는 10자 이상입니다"> 
-                </label>
-                <br>
-                성별:
-                <label for="gender">남자
-                    <input type="radio">
-                </label>
-                <label for="gender">여자
-                    <input type="radio">
-                </label>
 
-            </fieldset>
-            <fieldset>
-                <legend>부가정보
-                </legend>
-                취미:
-                <label for="hobby">코딩
-                    <input type="checkbox">
-                </label>
-                <label for="hobby">영화감상
-                    <input type="checkbox">
-                </label>
-                <label for="hobby">운동
-                    <input type="checkbox">
-                </label>
-                <br>
-                프로필 사진:
-                <input type="file">
-                <br>
-                사는 지역:
-                <select name="region">
-                    <option value="서울">서울</option>
-                    <option value="대구">대구</option>
-                    <option value="부산">부산</option>
-                </select>
-                <br>
-                자기소개:
-                <textarea name="intro" roms="5" cols="50"> 가벼운 자기소개를 해주세요</textarea>
-                <br>
-
-                <button class="button1">가입하기</button>
-                <button class="button2">다시작성</button>
-
+</head>
+<body>
+    <ul>
+        <li><a href="" class="home">Home</a></li>
+        <div id="date-container">
+            <div id="date-time"></div>
+        </div>
+        
+    </ul>
+    <script>
+        function displayDate() {
+            const dateElement = document.getElementById("date");
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = today.toLocaleDateString('ko-KR', options);
+            dateElement.textContent = formattedDate; // 날짜 표시
+        }
+        
+        // 페이지 로드 시 날짜 표시
+        window.onload = displayDate;
+    </script>
+    
+    <script>
+        function displayDateTime() {
+            const dateTimeElement = document.getElementById("date-time");
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = today.toLocaleDateString('ko-KR', options);
             
-            </fieldset>
-        </form>
+            // 시간과 분을 2자리로 표시
+            const hours = String(today.getHours()).padStart(2, '0');
+            const minutes = String(today.getMinutes()).padStart(2, '0');
+            const seconds = String(today.getSeconds()).padStart(2, '0');
+            
+            const formattedTime = `${hours}:${minutes}:${seconds}`;
+            
+            // 날짜와 시간을 하나의 문자열로 합쳐서 표시
+            dateTimeElement.textContent = `${formattedDate} ${formattedTime}`;
+        }
+        
+        // 페이지 로드 시 날짜와 시간 표시
+        setInterval(displayDateTime, 1000); // 1초마다 갱신하여 실시간 시간 표시
+    </script>
+    
 
-    </body>
+    <div class="image-container">
+        <a href="https://www.instagram.com/zi.ieun?igsh=MTcxbzA5bDJudXYxcA%3D%3D&utm_source=qr" class="custom-link">
+            <img src="star.png" alt="이미지 없음" style="display: block;">instagram
+        </a>
+    </div>
+    
+    <div class="image-container">
+        <a href="https://github.com/zieunn" class="custom-link">
+            <img src="computer.png" alt="이미지 없음" style="display: block;"><br>github
+        </a>
+    </div>
+    <div class="textbox1">
+        <p>여러 아이콘 위에 마우스를 올려보세요</p>
+        <img src="Star4.png" alt="이미지 없음" >
+    </div>
+
+    <div id="app">
+        <div class="bigBox1">
+            <div class="headerBox1">
+                <div class="icon"></div>
+                <div class="spacer"><i></i><i></i></div>
+                <h2>about me</h2>
+            </div>
+            <div class="inner-wrapper">
+                <div class="inner-content">
+                    <img src="me.png" alt="이미지 없음" class="me">
+                    <div class="inner-text">
+                        <p>김지은<br><br>
+                            2004.03.30<br><br>
+                            경영정보학부 23학번<br><br>
+                            13기 아기사자 프론트파트
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-boxes">
+                <div class="m-box">
+                    <a href="https://music.apple.com/kr/playlist/pl.u-yZyVEAVIYeLeEvZ" >
+                        <img src="music.png" alt="이미지 없음" class="m-title">
+                        <div class="m-text">
+                            - MUSIC -<br><br><br>
+                            제가 좋아하는<br><br> 
+                            노래들이 있는<br> <br>
+                            플레이리스트입니다<br> <br>
+                            다양한 장르를 좋아해요
+                            <br><br><br><br>
+                            cd를 클릭해보세요 !
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="h-box">
+                    <img src="game.png" alt="이미지 없음" class="h-title">
+                    <div class="h-text">
+                        - hobby - <br><br><br><br>
+                        저의 취미는 <br><br>
+                        영화보기, 노래 듣기, <br><br>
+                        운동하기, 여행다니기 <br><br>
+                        입니다. 손으로  <br><br>
+                        만드는 걸 좋아해요
+                    </div>
+                </div>
+                <div class="tmi-box">
+                    <img src="tv.png" alt="이미지 없음" class="t-title">
+                    <div class="t-text">
+                        - 페이지 설명 -<br><br><br>
+                        레트로한 컨셉으로 <br><br>
+                        심플하게 만들었고 <br><br>
+                        hover를 이용해서 <br><br>
+                        시각적 효과를 추가<br><br>
+                        해보았습니다
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="bigBox2">
+            <div class="headerBox2">
+                <div class="icon"></div>
+                <div class="spacer"><i></i><i></i></div>
+                <h2>about me</h2>
+            </div>
+            <div class="inner-wrapper2">
+                <div class="inner-content2">
+                    <div class="black-box">
+                        <div class="black-text">♦︎ !! Welcome !! ♦︎
+
+                        </div> 
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="box2-imgs">
+                    <div class="NY-box">
+                        <img src="IMG2.JPG" alt="이미지 없음" class="NY-img">
+                        <div class="NY-text">
+                            
+                             <br>
+                            조금 작게 보이지만 
+                            제 사진입니다. <br><br>
+                            저날 유독 날씨가 좋았어서<br><br>
+                            기억에 남았던 날이라서 넣어봤어요
+                        </div>
+                    </div>
+                    <div class="pu-box">
+                        <img src="pu.JPG" alt="이미지 없음" class="pu-img">
+                        <div class="pu-text">
+                            <br>
+                            최근에 무지에서 <br><br>
+                            푸딩 만들기를 샀는데 <br><br>
+                            재밌어보여서 추천합니다<br><br>
+                            사실 저도 아직 만들어 <br>
+                            보진 않았어요 ...... 
+                        </div>
+                    </div>
+                    
+                    <div class="dac-box">
+                        <img src="dac.JPG" alt="이미지 없음" class="dac-img">
+                        <div class="dac-text">
+                            <br>
+                            저는 강아지를 좋아하는데 <br><br>
+                            최근에는 닥스훈트가 너무 
+                            귀여운 거 같아요<br><br>
+                            언젠가는 꼭 강아지를 키우려고 합니다 ㅎ.ㅎ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wel-wrap">
+            <div class="wel-img">
+                <img src="" alt="">
+            </div>
+            <div class="wel-text">
+                <p>. . . ★ ♥︎</p>
+            </div>
+        </div>
+        
+
+    </div>
+    <div class="deco">
+        <img src="stone.png" alt="이미지 없음" class="stone-img">
+        <div class="stone-text">
+            안녕하세요 ~.~<br><br>
+            아직 많이 부족하지만 열심히 해보겠습니다 <br><br>
+            잘 부탁드립니다<br><br>
+        </div>
+    </div>
+    
+</body>
 </html>
